@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <span style={{ fontFamily: "'Frank Ruhl Libre', serif", fontSize: "1.6rem", color: "#e8c547", fontWeight: 700, display: "block", marginBottom: 16 }}>
-              בקתות אליתיי
+              בקתות צוריאל
             </span>
             <p style={{ fontSize: "0.85rem", fontWeight: 300, lineHeight: 1.8, maxWidth: 280 }}>
               חוויית לינה יוקרתית בלב הגליל המערבי. בקתות פרטיות עם ג׳קוזי, קמין וכל מה שצריך לחופשה מושלמת.
