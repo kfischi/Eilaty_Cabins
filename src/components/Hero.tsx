@@ -18,7 +18,7 @@ export default function Hero() {
         style={{
           position: "absolute",
           inset: 0,
-          background: `linear-gradient(160deg, rgba(26,46,26,0.88) 0%, rgba(45,74,45,0.65) 50%, rgba(26,46,26,0.92) 100%), url('https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=1800&q=80') center/cover no-repeat`,
+          background: `linear-gradient(160deg, rgba(26,46,26,0.88) 0%, rgba(45,74,45,0.65) 50%, rgba(26,46,26,0.92) 100%), url('https://res.cloudinary.com/decirk3zb/image/upload/q_auto,f_auto,w_1800/v1771705556/WhatsApp_Image_2026-02-19_at_22.03.37_1_ksjwcq.jpg') center/cover no-repeat`,
         }}
       />
 
