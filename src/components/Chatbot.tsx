@@ -114,7 +114,7 @@ export default function Chatbot() {
   return (
     <>
       {/* Floating Button */}
-      <div style={{ position: "fixed", bottom: 110, left: 32, zIndex: 998 }}>
+      <div style={{ position: "fixed", bottom: 32, left: 32, zIndex: 998 }}>
         {/* Tooltip */}
         <AnimatePresence>
           {showTooltip && !isOpen && (
@@ -212,7 +212,7 @@ export default function Chatbot() {
             transition={{ duration: 0.3, ease: "easeOut" }}
             style={{
               position: "fixed",
-              bottom: 185,
+              bottom: 108,
               left: 32,
               zIndex: 997,
               width: "min(380px, calc(100vw - 48px))",
