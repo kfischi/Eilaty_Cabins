@@ -1,7 +1,7 @@
 import { Cabin, Attraction, Review, Audience } from "@/types";
 
-export const WHATSAPP_NUMBER = "972500000000";
-export const PHONE = "050-000-0000";
+export const WHATSAPP_NUMBER = "972523983394";
+export const PHONE = "052-398-3394";
 export const LOCATION = "צוריאל, גליל מערבי";
 
 export const cabins: Cabin[] = [
