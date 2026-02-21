@@ -3,81 +3,55 @@ import { WHATSAPP_NUMBER, PHONE } from "@/data/content";
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#0f1c0f", color: "rgba(245,240,232,0.65)", padding: "60px 0 32px" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 48, marginBottom: 48 }}>
+    <footer style={{ background: "#050a05", borderTop: "1px solid rgba(201,162,39,0.1)", padding: "80px 0 40px" }}>
+      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 28px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, marginBottom: 64 }}>
           {/* Brand */}
           <div>
-            <span style={{ fontFamily: "'Frank Ruhl Libre', serif", fontSize: "1.6rem", color: "#e8c547", fontWeight: 700, display: "block", marginBottom: 16 }}>
+            <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "2rem", fontWeight: 400, color: "#e8c547", marginBottom: 8 }}>
               בקתות צוריאל
-            </span>
-            <p style={{ fontSize: "0.85rem", fontWeight: 300, lineHeight: 1.8, maxWidth: 280 }}>
-              חוויית לינה יוקרתית בלב הגליל המערבי. בקתות פרטיות עם ג׳קוזי, קמין וכל מה שצריך לחופשה מושלמת.
+            </div>
+            <div style={{ fontSize: "0.62rem", letterSpacing: "4px", color: "rgba(247,242,234,0.3)", textTransform: "uppercase", marginBottom: 24 }}>
+              גליל מערבי · לינת יוקרה
+            </div>
+            <p style={{ fontSize: "0.85rem", color: "rgba(247,242,234,0.4)", fontWeight: 300, lineHeight: 2, maxWidth: 280 }}>
+              חוויית לינה יוקרתית בלב הגליל. בקתות פרטיות עם ג׳קוזי, קמין ונוף שישכח.
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 style={{ color: "#f5f0e8", fontWeight: 700, fontSize: "0.9rem", marginBottom: 20, letterSpacing: "1px" }}>ניווט</h4>
-            <ul style={{ listStyle: "none", padding: 0 }}>
-              {[["#cabins", "הבקתות"], ["#experience", "החוויה"], ["#area", "האזור"], ["#booking", "הזמינו"]].map(([href, label]) => (
-                <li key={href} style={{ marginBottom: 10 }}>
-                  <a href={href} style={{ color: "rgba(245,240,232,0.6)", textDecoration: "none", fontSize: "0.85rem", fontWeight: 300, transition: "color 0.3s" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#e8c547")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,240,232,0.6)")}>
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 style={{ color: "#f5f0e8", fontWeight: 700, fontSize: "0.9rem", marginBottom: 20, letterSpacing: "1px" }}>צרו קשר</h4>
-            <ul style={{ listStyle: "none", padding: 0 }}>
-              {[
-                [`https://wa.me/${WHATSAPP_NUMBER}`, "WhatsApp"],
-                [`tel:${PHONE.replace(/-/g, "")}`, PHONE],
-                ["https://instagram.com", "אינסטגרם"],
-              ].map(([href, label]) => (
-                <li key={label} style={{ marginBottom: 10 }}>
-                  <a href={href} target="_blank" rel="noreferrer" style={{ color: "rgba(245,240,232,0.6)", textDecoration: "none", fontSize: "0.85rem", fontWeight: 300, transition: "color 0.3s" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#e8c547")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,240,232,0.6)")}>
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h4 style={{ color: "#f5f0e8", fontWeight: 700, fontSize: "0.9rem", marginBottom: 20, letterSpacing: "1px" }}>מידע משפטי</h4>
-            <ul style={{ listStyle: "none", padding: 0 }}>
-              {[
-                ["/privacy", "מדיניות פרטיות"],
-                ["/accessibility", "הצהרת נגישות"],
-              ].map(([href, label]) => (
-                <li key={href} style={{ marginBottom: 10 }}>
-                  <a href={href} style={{ color: "rgba(245,240,232,0.6)", textDecoration: "none", fontSize: "0.85rem", fontWeight: 300, transition: "color 0.3s" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#e8c547")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,240,232,0.6)")}>
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {[
+            { title: "ניווט", links: [["#cabins","הבקתות"],["#experience","החוויה"],["#area","האזור"],["#booking","הזמינו"]] },
+            { title: "צרו קשר", links: [[`https://wa.me/${WHATSAPP_NUMBER}`,"WhatsApp"],[`tel:${PHONE}`,"טלפון"],["https://instagram.com","אינסטגרם"]] },
+            { title: "משפטי", links: [["/privacy","מדיניות פרטיות"],["/accessibility","הצהרת נגישות"]] },
+          ].map(({ title, links }) => (
+            <div key={title}>
+              <div style={{ fontSize: "0.62rem", letterSpacing: "3px", textTransform: "uppercase", color: "rgba(201,162,39,0.6)", marginBottom: 24, fontWeight: 600 }}>{title}</div>
+              <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
+                {links.map(([href, label]) => (
+                  <li key={label}>
+                    <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel="noreferrer"
+                      style={{ color: "rgba(247,242,234,0.35)", textDecoration: "none", fontSize: "0.85rem", fontWeight: 300, transition: "color 0.3s" }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "#e8c547")}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247,242,234,0.35)")}
+                    >{label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: 28, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-          <span style={{ fontSize: "0.8rem" }}>© 2025 בקתות צוריאל. כל הזכויות שמורות.</span>
-          <span style={{ fontSize: "0.75rem", color: "#c49a6c" }}>
-            נבנה ע&quot;י{" "}
-            <a href="#" style={{ color: "#e8c547", textDecoration: "none", fontWeight: 600 }}>MULTISITE – אתרים שבונים עסקים</a>
-          </span>
+        {/* Gold divider */}
+        <div style={{ height: 1, background: "linear-gradient(90deg, transparent, rgba(201,162,39,0.2), transparent)", marginBottom: 32 }} />
+
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
+          <span style={{ fontSize: "0.75rem", color: "rgba(247,242,234,0.2)" }}>© 2025 בקתות צוריאל. כל הזכויות שמורות.</span>
+          <a href="#" style={{ fontSize: "0.72rem", color: "rgba(201,162,39,0.5)", textDecoration: "none", letterSpacing: "1px", fontWeight: 600, transition: "color 0.3s" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#e8c547")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(201,162,39,0.5)")}
+          >
+            MULTISITE – אתרים שבונים עסקים
+          </a>
         </div>
       </div>
     </footer>
