@@ -10,6 +10,7 @@ import Reviews from "@/components/Reviews";
 import BookingForm from "@/components/BookingForm";
 import Footer from "@/components/Footer";
 import WhatsAppBubble from "@/components/WhatsAppBubble";
+import Chatbot from "@/components/Chatbot";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppBubble />
+      <Chatbot />
     </>
   );
 }
