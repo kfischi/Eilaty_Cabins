@@ -77,7 +77,7 @@ export default function AccessibilityWidget() {
       </a>
 
       {/* Floating button */}
-      <div style={{ position: "fixed", bottom: 32, left: 110, zIndex: 996 }}>
+      <div style={{ position: "fixed", bottom: 32, right: 32, zIndex: 996 }}>
         <motion.button
           onClick={() => setOpen((p) => !p)}
           whileHover={{ scale: 1.08 }}
@@ -86,16 +86,19 @@ export default function AccessibilityWidget() {
           aria-expanded={open}
           aria-haspopup="dialog"
           style={{
-            width: 52, height: 52, borderRadius: "50%",
-            background: "#1a2e1a",
-            border: "2px solid rgba(201,162,39,0.4)",
+            width: 64, height: 64, borderRadius: "50%",
+            background: "#1565C0",
+            border: "2px solid rgba(255,255,255,0.25)",
             cursor: "pointer", display: "flex",
             alignItems: "center", justifyContent: "center",
-            boxShadow: "0 4px 20px rgba(26,46,26,0.3)",
-            color: "#e8c547", fontSize: "1.4rem",
+            boxShadow: "0 4px 20px rgba(21,101,192,0.45)",
+            color: "#ffffff", fontSize: "1.7rem",
           }}
         >
-          ♿
+          <svg viewBox="0 0 24 24" width={30} height={30} fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="12" cy="4" r="2"/>
+            <path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.61-.45-.01 0-.01-.01-.02-.01H13c-.35-.2-.75-.3-1.19-.26C10.76 7.11 10 8.04 10 9.09V15c0 1.1.9 2 2 2h5v5h2v-5.5c0-1.1-.9-2-2-2h-3v-1.45c1.03.95 2.06 1.46 4 1.46v-2c-1.97 0-2-.35-2-.51zm-6.9 6.9C10 20.9 7.5 18.4 7.5 15.3c0-2.18 1.23-4.06 3-5.02v-2.17C7.42 9.19 5.5 12.04 5.5 15.3c0 4.14 3.36 7.5 7.5 7.5.99 0 1.93-.2 2.8-.54l-1.54-1.54c-.41.1-.83.18-1.26.18z"/>
+          </svg>
         </motion.button>
       </div>
 
@@ -111,7 +114,7 @@ export default function AccessibilityWidget() {
             exit={{ opacity: 0, scale: 0.9, y: 10 }}
             transition={{ duration: 0.25 }}
             style={{
-              position: "fixed", bottom: 96, left: 110, zIndex: 995,
+              position: "fixed", bottom: 108, right: 32, zIndex: 995,
               width: 280,
               background: "#fff",
               borderRadius: 20,
