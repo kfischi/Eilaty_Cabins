@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --forest: #1a2e1a;
+  --forest-mid: #2d4a2d;
+  --forest-light: #3d6b3d;
+  --slate: #3a3d40;
+  --slate-light: #6b7280;
+  --wood: #8B5E3C;
+  --wood-light: #c49a6c;
+  --cream: #f5f0e8;
+  --cream-dark: #ede5d4;
+  --gold: #c9a227;
+  --gold-light: #e8c547;
+}
+
+html {
+  scroll-behavior: smooth;
+  direction: rtl;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--slate);
+  overflow-x: hidden;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1.05); }
+  to { transform: scale(1.12); }
+}
+
+@keyframes bubblePulse {
+  0%, 100% { box-shadow: 0 8px 32px rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 8px 48px rgba(37,211,102,0.6), 0 0 0 8px rgba(37,211,102,0.1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+.hero-bg-anim { animation: heroZoom 20s ease-in-out infinite alternate; }
+.whatsapp-pulse { animation: bubblePulse 3s ease-in-out infinite; }
+.scroll-bounce { animation: bounce 2s infinite; }
