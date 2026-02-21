@@ -82,7 +82,7 @@ export default function Experience() {
             {/* 📸 Replace with real aerial/pool photo */}
             {/* 🎬 Best place for drone video of property */}
             <img
-              src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=80"
+              src="https://res.cloudinary.com/decirk3zb/image/upload/q_auto,f_auto,w_800/v1771705557/WhatsApp_Image_2026-02-19_at_22.03.37_4_wavzxr.jpg"
               alt="בריכה ומתחם"
               style={{ width: "100%", height: "clamp(320px, 45vw, 500px)", objectFit: "cover", borderRadius: 24 }}
             />
