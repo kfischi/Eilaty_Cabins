@@ -1,121 +1,128 @@
 "use client";
 import { motion } from "framer-motion";
 import { cabins, WHATSAPP_NUMBER } from "@/data/content";
+import { useState } from "react";
 
 export default function Cabins() {
+  const [hovered, setHovered] = useState<string | null>(null);
+
   return (
-    <section id="cabins" style={{ background: "#ede5d4", padding: "100px 0" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
+    <section id="cabins" style={{ background: "#0f1a0f", padding: "140px 0", position: "relative", overflow: "hidden" }}>
+      {/* Background texture */}
+      <div style={{
+        position: "absolute", inset: 0, opacity: 0.03,
+        backgroundImage: "radial-gradient(circle, #c9a227 1px, transparent 1px)",
+        backgroundSize: "40px 40px",
+      }} />
+
+      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 28px", position: "relative", zIndex: 1 }}>
+
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
+          style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 80, flexWrap: "wrap", gap: 24 }}
         >
-          <div className="section-tag" style={{ color: "#8B5E3C", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "3px", textTransform: "uppercase", marginBottom: 16, display: "flex", alignItems: "center", gap: 10 }}>
-            <span style={{ width: 24, height: 1, background: "#8B5E3C", display: "inline-block" }} />
-            הלינה שלנו
+          <div>
+            <div className="section-tag">הלינה שלנו</div>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2rem, 5vw, 3.8rem)", fontWeight: 400, color: "#f7f2ea", lineHeight: 1.15, letterSpacing: "-0.3px" }}>
+              שלוש בקתות,<br />
+              <em style={{ color: "#e8c547", fontStyle: "italic" }}>חוויה אחת בלתי נשכחת</em>
+            </h2>
           </div>
-          <h2 style={{ fontFamily: "'Frank Ruhl Libre', serif", fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 700, color: "#1a2e1a", lineHeight: 1.25, marginBottom: 16 }}>
-            שלוש בקתות, <span style={{ color: "#8B5E3C" }}>חוויה אחת בלתי נשכחת</span>
-          </h2>
-          <p style={{ fontSize: "1.05rem", color: "#6b7280", fontWeight: 300, lineHeight: 1.8, maxWidth: 560 }}>
-            כל בקתה מעוצבת כיחידה עצמאית מלאה עם כל מה שתצטרכו לחופשה מושלמת.
+          <p style={{ fontSize: "0.9rem", color: "rgba(247,242,234,0.45)", fontWeight: 300, lineHeight: 1.9, maxWidth: 300, textAlign: "right" }}>
+            כל בקתה מעוצבת בקפידה כיחידה עצמאית מלאה — עם כל מה שתצטרכו לחופשה מושלמת.
           </p>
         </motion.div>
 
-        {/* Cards Grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 28, marginTop: 60 }}>
+        {/* Cards */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 2 }}>
           {cabins.map((cabin, i) => (
-            <motion.div
-              key={cabin.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15, duration: 0.7 }}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+            <motion.div key={cabin.id}
+              initial={{ opacity: 0, y: 60 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ delay: i * 0.12, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              onMouseEnter={() => setHovered(cabin.id)}
+              onMouseLeave={() => setHovered(null)}
               style={{
-                background: "#ffffff",
-                borderRadius: 20,
-                overflow: "hidden",
-                boxShadow: "0 4px 30px rgba(26,46,26,0.12)",
+                position: "relative", overflow: "hidden",
+                cursor: "pointer",
+                outline: cabin.featured ? "1px solid rgba(201,162,39,0.3)" : "none",
               }}
             >
               {/* Image */}
-              <div style={{ height: 260, position: "relative", overflow: "hidden" }}>
-                {/* 📸 Replace with actual cabin photo */}
-                <img
-                  src={cabin.image}
-                  alt={cabin.name}
-                  style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.6s ease" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.08)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+              <div style={{ height: 480, overflow: "hidden", position: "relative" }}>
+                <motion.img
+                  src={cabin.image} alt={cabin.name}
+                  animate={{ scale: hovered === cabin.id ? 1.08 : 1 }}
+                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
+                {/* Gradient overlay */}
                 <div style={{
-                  position: "absolute", top: 16, right: 16,
-                  background: "rgba(26,46,26,0.85)", backdropFilter: "blur(8px)",
-                  color: "#e8c547", fontSize: "0.74rem", fontWeight: 600,
-                  padding: "6px 14px", borderRadius: 50,
-                  border: "1px solid rgba(201,162,39,0.3)", letterSpacing: "1px",
-                }}>
-                  {cabin.badge}
-                </div>
-                {cabin.featured && (
-                  <div style={{
-                    position: "absolute", top: 16, left: 16,
-                    background: "linear-gradient(135deg, #c9a227, #e8c547)",
-                    color: "#1a2e1a", fontSize: "0.7rem", fontWeight: 800,
-                    padding: "5px 12px", borderRadius: 50, letterSpacing: "0.5px",
-                  }}>
-                    BESTSELLER
+                  position: "absolute", inset: 0,
+                  background: "linear-gradient(to top, rgba(10,15,10,0.95) 0%, rgba(10,15,10,0.3) 50%, rgba(10,15,10,0.1) 100%)",
+                }} />
+
+                {/* Badges */}
+                <div style={{ position: "absolute", top: 20, right: 20, display: "flex", flexDirection: "column", gap: 8 }}>
+                  {cabin.featured && (
+                    <div style={{ background: "linear-gradient(135deg, #c9a227, #e8c547)", color: "#0a0f0a", fontSize: "0.62rem", fontWeight: 800, padding: "5px 14px", letterSpacing: "2px", textTransform: "uppercase" }}>
+                      BESTSELLER
+                    </div>
+                  )}
+                  <div style={{ background: "rgba(10,15,10,0.7)", backdropFilter: "blur(12px)", border: "1px solid rgba(201,162,39,0.2)", color: "#e8c547", fontSize: "0.7rem", fontWeight: 500, padding: "5px 14px", letterSpacing: "1px" }}>
+                    {cabin.badge}
                   </div>
-                )}
+                </div>
+
+                {/* Price overlay on image */}
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "32px 28px 0" }}>
+                  <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "2rem", fontWeight: 400, color: "#f7f2ea", letterSpacing: "-0.5px" }}>
+                    {cabin.name}
+                  </div>
+                  <div style={{ fontSize: "0.72rem", color: "rgba(201,162,39,0.7)", letterSpacing: "2px", textTransform: "uppercase", marginTop: 4, marginBottom: 20 }}>
+                    {cabin.subtitle}
+                  </div>
+                </div>
               </div>
 
               {/* Body */}
-              <div style={{ padding: 28 }}>
-                <div style={{ fontFamily: "'Frank Ruhl Libre', serif", fontSize: "1.6rem", fontWeight: 700, color: "#1a2e1a", marginBottom: 6 }}>
-                  {cabin.name}
-                </div>
-                <div style={{ fontSize: "0.85rem", color: "#8B5E3C", fontWeight: 500, marginBottom: 20, letterSpacing: "0.5px" }}>
-                  {cabin.subtitle}
-                </div>
-
+              <div style={{ background: "#111a11", padding: "24px 28px 28px", borderTop: "1px solid rgba(201,162,39,0.08)" }}>
+                {/* Amenities */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 24 }}>
                   {cabin.amenities.map((a, j) => (
-                    <div key={j} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: "0.82rem", color: "#3a3d40" }}>
-                      <span style={{ width: 28, height: 28, background: "#ede5d4", borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, flexShrink: 0 }}>
+                    <div key={j} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                      <span style={{ width: 30, height: 30, background: "rgba(201,162,39,0.08)", border: "1px solid rgba(201,162,39,0.12)", borderRadius: 6, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, flexShrink: 0 }}>
                         {a.icon}
                       </span>
-                      {a.label}
+                      <span style={{ fontSize: "0.8rem", color: "rgba(247,242,234,0.55)", fontWeight: 300 }}>{a.label}</span>
                     </div>
                   ))}
                 </div>
 
-                <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 20 }}>
-                  <span style={{ fontFamily: "'Frank Ruhl Libre', serif", fontSize: "1.8rem", fontWeight: 700, color: "#1a2e1a" }}>
-                    ₪{cabin.pricePerNight.toLocaleString()}
-                  </span>
-                  <span style={{ fontSize: "0.8rem", color: "#6b7280" }}>ללילה</span>
+                {/* Price + CTA */}
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                  <div>
+                    <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "2rem", fontWeight: 600, color: "#e8c547" }}>
+                      ₪{cabin.pricePerNight.toLocaleString()}
+                    </span>
+                    <span style={{ fontSize: "0.72rem", color: "rgba(247,242,234,0.35)", marginRight: 6, letterSpacing: "1px" }}>ללילה</span>
+                  </div>
+                  <a
+                    href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`היי! אני מעוניין לשמוע על בקתת ${cabin.name}`)}`}
+                    target="_blank" rel="noreferrer"
+                    style={{
+                      background: "linear-gradient(135deg, #c9a227, #e8c547)",
+                      color: "#0a0f0a", padding: "12px 24px",
+                      fontSize: "0.8rem", fontWeight: 700,
+                      textDecoration: "none", letterSpacing: "1px",
+                      textTransform: "uppercase",
+                      transition: "all 0.3s",
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(201,162,39,0.4)"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; }}
+                  >
+                    בדקו זמינות
+                  </a>
                 </div>
-
-                <a
-                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=היי! אני מעוניין לשמוע על בקתת ${cabin.name} ולבדוק זמינות`}
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    display: "block", textAlign: "center",
-                    background: "#1a2e1a", color: "#f5f0e8",
-                    padding: 14, borderRadius: 12, textDecoration: "none",
-                    fontWeight: 600, fontSize: "0.9rem", letterSpacing: "0.5px",
-                    transition: "all 0.3s",
-                  }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = "#3d6b3d"; e.currentTarget.style.color = "#e8c547"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = "#1a2e1a"; e.currentTarget.style.color = "#f5f0e8"; }}
-                >
-                  בדקו זמינות
-                </a>
               </div>
             </motion.div>
           ))}
