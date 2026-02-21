@@ -51,13 +51,32 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
+          {/* Legal */}
+          <div>
+            <h4 style={{ color: "#f5f0e8", fontWeight: 700, fontSize: "0.9rem", marginBottom: 20, letterSpacing: "1px" }}>מידע משפטי</h4>
+            <ul style={{ listStyle: "none", padding: 0 }}>
+              {[
+                ["/privacy", "מדיניות פרטיות"],
+                ["/accessibility", "הצהרת נגישות"],
+              ].map(([href, label]) => (
+                <li key={href} style={{ marginBottom: 10 }}>
+                  <a href={href} style={{ color: "rgba(245,240,232,0.6)", textDecoration: "none", fontSize: "0.85rem", fontWeight: 300, transition: "color 0.3s" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "#e8c547")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(245,240,232,0.6)")}>
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: 28, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
           <span style={{ fontSize: "0.8rem" }}>© 2025 בקתות צוריאל. כל הזכויות שמורות.</span>
           <span style={{ fontSize: "0.75rem", color: "#c49a6c" }}>
-            נבנה על ידי{" "}
-            <a href="#" style={{ color: "#e8c547", textDecoration: "none", fontWeight: 600 }}>MULTIBRAWN</a>
+            נבנה ע&quot;י{" "}
+            <a href="#" style={{ color: "#e8c547", textDecoration: "none", fontWeight: 600 }}>MULTISITE – אתרים שבונים עסקים</a>
           </span>
         </div>
       </div>
