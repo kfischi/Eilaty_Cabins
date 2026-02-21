@@ -11,12 +11,14 @@ import BookingForm from "@/components/BookingForm";
 import Footer from "@/components/Footer";
 import WhatsAppBubble from "@/components/WhatsAppBubble";
 import Chatbot from "@/components/Chatbot";
+import CookieBanner from "@/components/legal/CookieBanner";
+import AccessibilityWidget from "@/components/legal/AccessibilityWidget";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <StatsStrip />
         <Cabins />
@@ -30,6 +32,8 @@ export default function Home() {
       <Footer />
       <WhatsAppBubble />
       <Chatbot />
+      <AccessibilityWidget />
+      <CookieBanner />
     </>
   );
 }
