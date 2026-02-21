@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "בקתות אליתיי | צוריאל, גליל מערבי",
+  title: "בקתות צוריאל | צוריאל, גליל מערבי",
   description: "חוויית לינה יוקרתית בלב הגליל. בקתות עץ פרטיות עם ג'קוזי, קמין ונוף מרהיב.",
   openGraph: {
-    title: "בקתות אליתיי – הגליל מחכה לכם",
+    title: "בקתות צוריאל – הגליל מחכה לכם",
     description: "בקתות עץ יוקרתיות עם ג'קוזי פרטי, קמין ונוף גלילי עוצר נשימה.",
     locale: "he_IL",
     type: "website",
