@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
 
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.07)", paddingTop: 28, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-          <span style={{ fontSize: "0.8rem" }}>© 2025 בקתות אליתיי. כל הזכויות שמורות.</span>
+          <span style={{ fontSize: "0.8rem" }}>© 2025 בקתות צוריאל. כל הזכויות שמורות.</span>
           <span style={{ fontSize: "0.75rem", color: "#c49a6c" }}>
             נבנה על ידי{" "}
             <a href="#" style={{ color: "#e8c547", textDecoration: "none", fontWeight: 600 }}>MULTIBRAWN</a>
