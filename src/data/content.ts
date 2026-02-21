@@ -1,8 +1,30 @@
 import { Cabin, Attraction, Review, Audience } from "@/types";
 
-export const WHATSAPP_NUMBER = "972523983394";
-export const PHONE = "052-398-3394";
+export const WHATSAPP_NUMBER = "972500000000";
+export const PHONE = "050-000-0000";
 export const LOCATION = "צוריאל, גליל מערבי";
+
+// All real Cloudinary images
+const IMG = {
+  // Cabins
+  barbur1: "https://res.cloudinary.com/decirk3zb/image/upload/v1771706994/6_lt7xxt.jpg",
+  barbur2: "https://res.cloudinary.com/decirk3zb/image/upload/v1771706986/5_ywermp.jpg",
+  flamingo1: "https://res.cloudinary.com/decirk3zb/image/upload/v1771706986/4_su0u31.jpg",
+  flamingo2: "https://res.cloudinary.com/decirk3zb/image/upload/v1771706985/2_tp5qp8.jpg",
+  hasida1: "https://res.cloudinary.com/decirk3zb/image/upload/v1771706985/1_zxjkwe.jpg",
+  hasida2: "https://res.cloudinary.com/decirk3zb/image/upload/v1771707165/3_fvqxuv.jpg",
+  // Property / Experience
+  pool1: "https://res.cloudinary.com/decirk3zb/image/upload/v1771705569/WhatsApp_Image_2026-02-19_at_22.03.38_5_ikcgvp.jpg",
+  pool2: "https://res.cloudinary.com/decirk3zb/image/upload/v1771705565/WhatsApp_Image_2026-02-19_at_22.03.38_3_d4eqsf.jpg",
+  jacuzzi: "https://res.cloudinary.com/decirk3zb/image/upload/v1771705563/WhatsApp_Image_2026-02-19_at_22.03.38_1_ojldo9.jpg",
+  interior1: "https://res.cloudinary.com/decirk3zb/image/upload/v1771707164/2_yvbyaa.jpg",
+  interior2: "https://res.cloudinary.com/decirk3zb/image/upload/v1771707164/1_q49spa.jpg",
+  bbq: "https://res.cloudinary.com/decirk3zb/image/upload/v1771705556/WhatsApp_Image_2026-02-19_at_22.03.37_2_p2a2vl.jpg",
+  nature1: "https://res.cloudinary.com/decirk3zb/image/upload/v1771705555/WhatsApp_Image_2026-02-19_at_22.03.36_3_ajz7ra.jpg",
+  nature2: "https://res.cloudinary.com/decirk3zb/image/upload/v1771705555/WhatsApp_Image_2026-02-19_at_22.03.36_2_bcuftb.jpg",
+  view1: "https://res.cloudinary.com/decirk3zb/image/upload/v1771705562/WhatsApp_Image_2026-02-19_at_22.03.37_7_fwm7yz.jpg",
+  view2: "https://res.cloudinary.com/decirk3zb/image/upload/v1771705563/WhatsApp_Image_2026-02-19_at_22.03.38_2_gtbgvv.jpg",
+};
 
 export const cabins: Cabin[] = [
   {
@@ -10,7 +32,7 @@ export const cabins: Cabin[] = [
     name: "ברבור",
     subtitle: "בקתה רומנטית לזוגות",
     badge: "עד 2 אנשים",
-    image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=700&q=80",
+    image: IMG.barbur1,
     capacity: "2",
     pricePerNight: 950,
     amenities: [
@@ -27,7 +49,7 @@ export const cabins: Cabin[] = [
     name: "פלמינגו",
     subtitle: "בקתת פרמיום לזוגות",
     badge: "⭐ הפופולרית",
-    image: "https://images.unsplash.com/photo-1606402179428-a57976d71fa4?w=700&q=80",
+    image: IMG.flamingo1,
     capacity: "2",
     pricePerNight: 1150,
     amenities: [
@@ -45,7 +67,7 @@ export const cabins: Cabin[] = [
     name: "חסידה",
     subtitle: "בקתה משפחתית מורחבת",
     badge: "עד 6 אנשים",
-    image: "https://images.unsplash.com/photo-1601918774946-25832a4be0d6?w=700&q=80",
+    image: IMG.hasida1,
     capacity: "6",
     pricePerNight: 1400,
     amenities: [
@@ -60,11 +82,11 @@ export const cabins: Cabin[] = [
 ];
 
 export const galleryImages = [
-  { src: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=80", label: "בריכה חיצונית" },
-  { src: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=900&q=80", label: "ג'קוזי פרטי" },
-  { src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=80", label: "נוף הגליל" },
-  { src: "https://images.unsplash.com/photo-1597528380307-03f23fec75b2?w=900&q=80", label: "מטבח BBQ" },
-  { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80", label: "גליל עליון" },
+  { src: IMG.pool1, label: "בריכה חיצונית" },
+  { src: IMG.jacuzzi, label: "ג'קוזי פרטי" },
+  { src: IMG.view1, label: "נוף הגליל" },
+  { src: IMG.bbq, label: "מטבח BBQ" },
+  { src: IMG.nature1, label: "גליל עליון" },
 ];
 
 export const audiences: Audience[] = [
@@ -75,7 +97,7 @@ export const audiences: Audience[] = [
     headline: "חופשה רומנטית שתזכרו לנצח",
     description: "כבו את הטלפון, הדליקו את הקמין, ותנו לגליל לעשות את שלו. האינטימיות והפרטיות שיש כאן לא תמצאו במלון.",
     features: ["ג'קוזי פרטי מול נוף הגליל", "קמין עצים לערבים חמימים", "עיצוב רומנטי ואינטימי", "פרטיות מוחלטת"],
-    image: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?w=700&q=80",
+    image: IMG.barbur2,
     cta: "הזמינו בקתה רומנטית",
   },
   {
@@ -83,9 +105,9 @@ export const audiences: Audience[] = [
     label: "משפחות",
     emoji: "👨‍👩‍👧‍👦",
     headline: "חופשה שלמה – בטוחה ומהנה לכולם",
-    description: "הילדים שמחים בבריכה המגודרת, אתם נרגעים בג'קוזי. מרחב, בטיחות, ואוכל ביחד בחוץ – זה הקסם של אליתיי.",
+    description: "הילדים שמחים בבריכה המגודרת, אתם נרגעים בג'קוזי. מרחב, בטיחות, ואוכל ביחד בחוץ – זה הקסם של צוריאל.",
     features: ["בריכת ילדים מגודרת ובטוחה", "בקתת חסידה עם 2 חדרי שינה", "מטבח מלא + גריל BBQ", "שטח גינה פרטי לילדים"],
-    image: "https://images.unsplash.com/photo-1545579163-bd85d212b93b?w=700&q=80",
+    image: IMG.pool2,
     cta: "הזמינו חופשה משפחתית",
   },
   {
@@ -95,7 +117,7 @@ export const audiences: Audience[] = [
     headline: "אירועים קטנים, רגעים גדולים",
     description: "ימי הולדת, גיבושים, חגיגות משפחתיות – עד 50 איש במרחב פרטי, ירוק ומושקע בגליל.",
     features: ["קיבולת עד 50 אנשים", "מטבח חיצוני גדול + BBQ", "שלוש בקתות ללינה", "ליווי ותיאום מלא"],
-    image: "https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=700&q=80",
+    image: IMG.nature2,
     cta: "שלחו פרטים לאירוע",
   },
 ];
