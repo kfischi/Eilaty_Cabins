@@ -32,7 +32,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#" style={{ textDecoration: "none" }}>
           <span style={{ fontFamily: "'Frank Ruhl Libre', serif", color: "#e8c547", fontSize: "1.3rem", fontWeight: 700 }}>
-            בקתות <span style={{ color: "#f5f0e8", fontWeight: 300 }}>אליתיי</span>
+            בקתות <span style={{ color: "#f5f0e8", fontWeight: 300 }}>צוריאל</span>
           </span>
         </a>
 
