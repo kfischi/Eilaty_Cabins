@@ -33,7 +33,7 @@ export default function Hero() {
         {/* Multi-layer gradient overlay */}
         <div style={{
           position: "absolute", inset: 0,
-          background: "linear-gradient(180deg, rgba(8,8,15,0.45) 0%, rgba(8,8,15,0.15) 35%, rgba(8,8,15,0.6) 75%, rgba(8,8,15,0.95) 100%)",
+          background: "linear-gradient(180deg, rgba(8,8,15,0.3) 0%, rgba(8,8,15,0.05) 30%, rgba(8,8,15,0.5) 60%, rgba(8,8,15,0.92) 85%, rgba(8,8,15,0.98) 100%)",
         }} />
         <div style={{
           position: "absolute", inset: 0,
@@ -62,13 +62,13 @@ export default function Hero() {
         animationDirection: "reverse",
       }} />
 
-      {/* Content */}
-      <motion.div style={{ position: "relative", zIndex: 3, textAlign: "center", padding: "0 24px", maxWidth: 960, opacity }}>
+      {/* Content – anchored to bottom */}
+      <motion.div style={{ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 3, padding: "0 48px 80px", maxWidth: 900, opacity }}>
 
         {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }}
-          style={{ display: "inline-flex", alignItems: "center", gap: 16, marginBottom: 40 }}
+          style={{ display: "inline-flex", alignItems: "center", gap: 16, marginBottom: 28 }}
         >
           <span style={{ width: 40, height: 1, background: "linear-gradient(90deg, transparent, #7c6fcf)" }} />
           <span style={{ fontFamily: "'Heebo'", fontSize: "0.68rem", fontWeight: 600, letterSpacing: "5px", textTransform: "uppercase", color: "#7c6fcf" }}>
@@ -80,14 +80,14 @@ export default function Hero() {
         {/* Main headline */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.8rem, 7vw, 6.5rem)", fontWeight: 300, color: "#f0eeff", lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: 8 }}
+          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.4rem, 6vw, 5.5rem)", fontWeight: 300, color: "#f0eeff", lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: 4 }}
         >
           לינת יוקרה
         </motion.h1>
         <motion.h1
           initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-shimmer"
-          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.8rem, 7vw, 6.5rem)", fontWeight: 600, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: 36, display: "block" }}
+          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.4rem, 6vw, 5.5rem)", fontWeight: 600, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: 28, display: "block" }}
         >
           בלב הגליל
         </motion.h1>
@@ -95,7 +95,7 @@ export default function Hero() {
         {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.9 }}
-          style={{ fontSize: "clamp(1rem, 2vw, 1.2rem)", color: "rgba(247,242,234,0.65)", fontWeight: 300, lineHeight: 2, maxWidth: 560, margin: "0 auto 56px", fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", letterSpacing: "0.3px" }}
+          style={{ fontSize: "clamp(0.95rem, 1.8vw, 1.1rem)", color: "rgba(247,242,234,0.6)", fontWeight: 300, lineHeight: 1.8, maxWidth: 520, marginBottom: 36, fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", letterSpacing: "0.3px" }}
         >
           שלוש בקתות פרטיות עם ג׳קוזי, קמין ונוף אינסופי — המקום שבו הזמן מואט
         </motion.p>
@@ -103,7 +103,7 @@ export default function Hero() {
         {/* CTA buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 1.1 }}
-          style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}
+          style={{ display: "flex", gap: 14, justifyContent: "flex-start", flexWrap: "wrap" }}
         >
           <a href="#booking" className="glow-anim"
             style={{
@@ -136,19 +136,22 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* Stats strip */}
+        {/* Stats strip – compact row */}
         <motion.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4, duration: 1 }}
-          style={{ display: "flex", gap: 48, justifyContent: "center", marginTop: 72, flexWrap: "wrap" }}
+          style={{ display: "flex", gap: 32, marginTop: 40, flexWrap: "wrap" }}
         >
           {[
             { num: "3", label: "בקתות פרטיות" },
             { num: "50+", label: "אורחים לאירועים" },
             { num: "4.9★", label: "דירוג ממוצע" },
-          ].map((s) => (
-            <div key={s.num} style={{ textAlign: "center" }}>
-              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "2.2rem", fontWeight: 600, color: "#a594f9", lineHeight: 1 }}>{s.num}</div>
-              <div style={{ fontSize: "0.7rem", color: "rgba(247,242,234,0.45)", letterSpacing: "2px", textTransform: "uppercase", marginTop: 6 }}>{s.label}</div>
+          ].map((s, i) => (
+            <div key={s.num} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              {i > 0 && <div style={{ width: 1, height: 28, background: "rgba(165,148,249,0.2)" }} />}
+              <div>
+                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.6rem", fontWeight: 600, color: "#a594f9", lineHeight: 1 }}>{s.num}</div>
+                <div style={{ fontSize: "0.6rem", color: "rgba(247,242,234,0.4)", letterSpacing: "2px", textTransform: "uppercase", marginTop: 3 }}>{s.label}</div>
+              </div>
             </div>
           ))}
         </motion.div>
