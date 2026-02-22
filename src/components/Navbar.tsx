@@ -40,7 +40,7 @@ export default function Navbar() {
         animate={{
           backgroundColor: scrolled || menuOpen ? "rgba(10,15,10,0.97)" : "rgba(10,15,10,0.3)",
           backdropFilter: "blur(24px)",
-          borderBottom: scrolled ? "1px solid rgba(124,111,207,0.15)" : "1px solid transparent",
+          borderBottom: scrolled ? "1px solid rgba(45,135,174,0.15)" : "1px solid transparent",
           paddingTop: scrolled ? "12px" : "20px",
           paddingBottom: scrolled ? "12px" : "20px",
         }}
@@ -54,15 +54,15 @@ export default function Navbar() {
               fontSize: "2.2rem",
               fontWeight: 700,
               letterSpacing: "0.5px",
-              background: "linear-gradient(135deg, #c4b8ff 0%, #a594f9 40%, #e0d8ff 70%, #a594f9 100%)",
+              background: "linear-gradient(135deg, #81e6d9 0%, #4299e1 40%, #b2f5ea 70%, #4299e1 100%)",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              filter: "drop-shadow(0 0 12px rgba(165,148,249,0.7))",
+              filter: "drop-shadow(0 0 12px rgba(66,153,225,0.7))",
             }}>
               בקתות צוריאל
             </span>
-            <span style={{ fontSize: "0.65rem", letterSpacing: "4px", color: "rgba(196,184,255,0.5)", textTransform: "uppercase", marginTop: 5 }}>
+            <span style={{ fontSize: "0.65rem", letterSpacing: "4px", color: "rgba(129,230,217,0.5)", textTransform: "uppercase", marginTop: 5 }}>
               גליל מערבי · לינת יוקרה
             </span>
           </a>
@@ -71,7 +71,7 @@ export default function Navbar() {
           <div className="desktop-nav" style={{ display: "flex", gap: 36, alignItems: "center" }}>
             {navLinks.map((item) => (
               <a key={item.href} href={item.href} style={{ color: "rgba(247,242,234,0.65)", textDecoration: "none", fontSize: "1rem", fontWeight: 400, letterSpacing: "0.3px", transition: "color 0.3s", position: "relative" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#a594f9")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#4299e1")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247,242,234,0.65)")}
               >
                 {item.label}
@@ -90,9 +90,9 @@ export default function Navbar() {
             >
               <WaIcon />
             </a>
-            <a href="#booking" style={{ background: "linear-gradient(135deg, #7c6fcf, #a594f9)", color: "#08080f", padding: "11px 26px", borderRadius: 50, fontSize: "0.95rem", fontWeight: 700, textDecoration: "none", letterSpacing: "0.3px", transition: "all 0.3s", boxShadow: "0 4px 20px rgba(124,111,207,0.3)" }}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(124,111,207,0.5)"; }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(124,111,207,0.3)"; }}
+            <a href="#booking" style={{ background: "linear-gradient(135deg, #2d87ae, #4299e1)", color: "#0a0f1a", padding: "11px 26px", borderRadius: 50, fontSize: "0.95rem", fontWeight: 700, textDecoration: "none", letterSpacing: "0.3px", transition: "all 0.3s", boxShadow: "0 4px 20px rgba(45,135,174,0.3)" }}
+              onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(45,135,174,0.5)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(45,135,174,0.3)"; }}
             >
               בדקו זמינות
             </a>
@@ -107,13 +107,13 @@ export default function Navbar() {
               <WaIcon />
             </a>
             <motion.button onClick={() => setMenuOpen((p) => !p)} whileTap={{ scale: 0.92 }}
-              style={{ width: 44, height: 44, background: "rgba(124,111,207,0.12)", border: "1px solid rgba(124,111,207,0.3)", borderRadius: 10, cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 5 }}
+              style={{ width: 44, height: 44, background: "rgba(45,135,174,0.12)", border: "1px solid rgba(45,135,174,0.3)", borderRadius: 10, cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 5 }}
               aria-label="תפריט"
             >
               {[0, 1, 2].map((i) => (
                 <motion.span key={i}
                   animate={i === 0 ? { rotate: menuOpen ? 45 : 0, y: menuOpen ? 9 : 0 } : i === 1 ? { opacity: menuOpen ? 0 : 1 } : { rotate: menuOpen ? -45 : 0, y: menuOpen ? -9 : 0 }}
-                  style={{ display: "block", width: i === 1 ? 16 : 22, height: 1.5, background: "#a594f9", borderRadius: 2, transformOrigin: "center" }}
+                  style={{ display: "block", width: i === 1 ? 16 : 22, height: 1.5, background: "#4299e1", borderRadius: 2, transformOrigin: "center" }}
                 />
               ))}
             </motion.button>
@@ -132,14 +132,14 @@ export default function Navbar() {
             style={{ position: "fixed", inset: 0, zIndex: 999, background: "rgba(10,15,10,0.98)", backdropFilter: "blur(24px)", paddingTop: 90, display: "flex", flexDirection: "column" }}
           >
             {/* Decorative gold line */}
-            <div style={{ position: "absolute", top: 0, left: "10%", right: "10%", height: "1px", background: "linear-gradient(90deg, transparent, #a594f9, transparent)" }} />
+            <div style={{ position: "absolute", top: 0, left: "10%", right: "10%", height: "1px", background: "linear-gradient(90deg, transparent, #4299e1, transparent)" }} />
 
             <div style={{ textAlign: "center", marginBottom: 48 }}>
               <div style={{
                 fontFamily: "'Cormorant Garamond', serif", fontSize: "2.4rem", fontWeight: 700,
-                background: "linear-gradient(135deg, #c4b8ff, #a594f9, #e0d8ff)",
+                background: "linear-gradient(135deg, #81e6d9, #4299e1, #b2f5ea)",
                 WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent",
-                filter: "drop-shadow(0 0 12px rgba(165,148,249,0.6))",
+                filter: "drop-shadow(0 0 12px rgba(66,153,225,0.6))",
               }}>בקתות צוריאל</div>
               <div style={{ fontSize: "0.65rem", letterSpacing: "5px", color: "rgba(247,242,234,0.35)", textTransform: "uppercase", marginTop: 6 }}>גליל מערבי · לינת יוקרה</div>
             </div>
@@ -150,12 +150,12 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.07, duration: 0.4 }}
                   onClick={() => go(item.href)}
-                  style={{ background: "none", border: "none", borderBottom: "1px solid rgba(124,111,207,0.08)", color: "#f0eeff", fontFamily: "'Cormorant Garamond', serif", fontSize: "2.2rem", fontWeight: 500, padding: "20px 0", cursor: "pointer", textAlign: "right", display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", letterSpacing: "0.5px" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#a594f9")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "#f0eeff")}
+                  style={{ background: "none", border: "none", borderBottom: "1px solid rgba(45,135,174,0.08)", color: "#e8f4f8", fontFamily: "'Cormorant Garamond', serif", fontSize: "2.2rem", fontWeight: 500, padding: "20px 0", cursor: "pointer", textAlign: "right", display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%", letterSpacing: "0.5px" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#4299e1")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#e8f4f8")}
                 >
                   {item.label}
-                  <span style={{ fontSize: "1rem", color: "rgba(124,111,207,0.4)", fontFamily: "Heebo" }}>←</span>
+                  <span style={{ fontSize: "1rem", color: "rgba(45,135,174,0.4)", fontFamily: "Heebo" }}>←</span>
                 </motion.button>
               ))}
             </div>
@@ -164,7 +164,7 @@ export default function Navbar() {
               style={{ padding: "32px 40px 48px", display: "flex", flexDirection: "column", gap: 12 }}
             >
               <a href="#booking" onClick={() => go("#booking")}
-                style={{ display: "block", textAlign: "center", background: "linear-gradient(135deg, #7c6fcf, #a594f9)", color: "#08080f", padding: "18px", borderRadius: 14, fontWeight: 800, fontSize: "1.05rem", textDecoration: "none" }}>
+                style={{ display: "block", textAlign: "center", background: "linear-gradient(135deg, #2d87ae, #4299e1)", color: "#0a0f1a", padding: "18px", borderRadius: 14, fontWeight: 800, fontSize: "1.05rem", textDecoration: "none" }}>
                 בדקו זמינות עכשיו ✦
               </a>
               <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer"
