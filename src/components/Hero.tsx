@@ -62,8 +62,26 @@ export default function Hero() {
         animationDirection: "reverse",
       }} />
 
-      {/* Content – anchored to bottom */}
-      <motion.div style={{ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 3, padding: "0 48px 80px", maxWidth: 900, opacity }}>
+      {/* Content – glass card anchored to bottom */}
+      <motion.div style={{ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 3, padding: "0 0 0", opacity }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            margin: "0 32px 48px",
+            padding: "44px 52px",
+            background: "linear-gradient(135deg, rgba(18,20,58,0.75) 0%, rgba(30,20,70,0.65) 50%, rgba(10,8,30,0.8) 100%)",
+            backdropFilter: "blur(28px) saturate(180%)",
+            WebkitBackdropFilter: "blur(28px) saturate(180%)",
+            border: "1px solid rgba(165,148,249,0.25)",
+            borderRadius: 20,
+            boxShadow: "0 8px 64px rgba(8,8,15,0.6), inset 0 1px 0 rgba(255,255,255,0.08)",
+            position: "relative",
+            overflow: "hidden",
+          }}
+        >
+          {/* Shimmer top border */}
+          <div style={{ position: "absolute", top: 0, left: "15%", right: "15%", height: 1, background: "linear-gradient(90deg, transparent, rgba(165,148,249,0.6), rgba(196,184,255,0.8), rgba(165,148,249,0.6), transparent)" }} />
 
         {/* Eyebrow */}
         <motion.div
@@ -71,7 +89,7 @@ export default function Hero() {
           style={{ display: "inline-flex", alignItems: "center", gap: 16, marginBottom: 28 }}
         >
           <span style={{ width: 40, height: 1, background: "linear-gradient(90deg, transparent, #7c6fcf)" }} />
-          <span style={{ fontFamily: "'Heebo'", fontSize: "0.68rem", fontWeight: 600, letterSpacing: "5px", textTransform: "uppercase", color: "#7c6fcf" }}>
+          <span style={{ fontFamily: "'Heebo'", fontSize: "0.68rem", fontWeight: 600, letterSpacing: "5px", textTransform: "uppercase", color: "#c4b8ff" }}>
             צוריאל · גליל מערבי
           </span>
           <span style={{ width: 40, height: 1, background: "linear-gradient(90deg, #7c6fcf, transparent)" }} />
@@ -80,14 +98,14 @@ export default function Hero() {
         {/* Main headline */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.4rem, 6vw, 5.5rem)", fontWeight: 300, color: "#f0eeff", lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: 4 }}
+          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.4rem, 6vw, 5.5rem)", fontWeight: 300, color: "#ffffff", lineHeight: 1.05, letterSpacing: "-1px", marginBottom: 4, textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
         >
           לינת יוקרה
         </motion.h1>
         <motion.h1
           initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-shimmer"
-          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.4rem, 6vw, 5.5rem)", fontWeight: 600, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: 28, display: "block" }}
+          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.4rem, 6vw, 5.5rem)", fontWeight: 600, lineHeight: 1.1, letterSpacing: "-1px", marginBottom: 24, display: "block", filter: "drop-shadow(0 0 20px rgba(165,148,249,0.4))" }}
         >
           בלב הגליל
         </motion.h1>
@@ -95,7 +113,7 @@ export default function Hero() {
         {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.9 }}
-          style={{ fontSize: "clamp(0.95rem, 1.8vw, 1.1rem)", color: "rgba(247,242,234,0.6)", fontWeight: 300, lineHeight: 1.8, maxWidth: 520, marginBottom: 36, fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", letterSpacing: "0.3px" }}
+          style={{ fontSize: "clamp(0.95rem, 1.8vw, 1.1rem)", color: "rgba(240,238,255,0.82)", fontWeight: 300, lineHeight: 1.8, maxWidth: 520, marginBottom: 36, fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", letterSpacing: "0.3px" }}
         >
           שלוש בקתות פרטיות עם ג׳קוזי, קמין ונוף אינסופי — המקום שבו הזמן מואט
         </motion.p>
@@ -108,9 +126,10 @@ export default function Hero() {
           <a href="#booking" className="glow-anim"
             style={{
               background: "linear-gradient(135deg, #7c6fcf, #a594f9, #c4b8ff)",
-              color: "#08080f", padding: "20px 52px", borderRadius: 2,
-              fontWeight: 700, fontSize: "0.9rem", textDecoration: "none",
+              color: "#08080f", padding: "18px 48px", borderRadius: 8,
+              fontWeight: 800, fontSize: "0.95rem", textDecoration: "none",
               letterSpacing: "2px", textTransform: "uppercase",
+              boxShadow: "0 0 32px rgba(165,148,249,0.5), 0 4px 16px rgba(0,0,0,0.3)",
               transition: "all 0.4s cubic-bezier(0.23, 1, 0.32, 1)",
             }}
             onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-4px) scale(1.02)"; e.currentTarget.style.letterSpacing = "3px"; }}
@@ -121,7 +140,7 @@ export default function Hero() {
           <a href="#cabins"
             style={{
               background: "transparent", color: "#f0eeff",
-              border: "1px solid rgba(247,242,234,0.2)",
+              border: "1px solid rgba(165,148,249,0.4)",
               padding: "20px 52px", borderRadius: 2,
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: "1.05rem", fontStyle: "italic",
@@ -149,11 +168,12 @@ export default function Hero() {
             <div key={s.num} style={{ display: "flex", alignItems: "center", gap: 10 }}>
               {i > 0 && <div style={{ width: 1, height: 28, background: "rgba(165,148,249,0.2)" }} />}
               <div>
-                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.6rem", fontWeight: 600, color: "#a594f9", lineHeight: 1 }}>{s.num}</div>
+                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.6rem", fontWeight: 600, color: "#c4b8ff", lineHeight: 1, textShadow: "0 0 16px rgba(196,184,255,0.5)" }}>{s.num}</div>
                 <div style={{ fontSize: "0.6rem", color: "rgba(247,242,234,0.4)", letterSpacing: "2px", textTransform: "uppercase", marginTop: 3 }}>{s.label}</div>
               </div>
             </div>
           ))}
+        </motion.div>
         </motion.div>
       </motion.div>
 
