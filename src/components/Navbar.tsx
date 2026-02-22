@@ -49,18 +49,28 @@ export default function Navbar() {
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 28px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           {/* Logo */}
           <a href="#" style={{ textDecoration: "none", display: "flex", flexDirection: "column", lineHeight: 1 }}>
-            <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.45rem", fontWeight: 600, color: "#a594f9", letterSpacing: "1px" }}>
+            <span style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "2.2rem",
+              fontWeight: 700,
+              letterSpacing: "0.5px",
+              background: "linear-gradient(135deg, #c4b8ff 0%, #a594f9 40%, #e0d8ff 70%, #a594f9 100%)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              filter: "drop-shadow(0 0 12px rgba(165,148,249,0.7))",
+            }}>
               בקתות צוריאל
             </span>
-            <span style={{ fontSize: "0.58rem", letterSpacing: "4px", color: "rgba(245,240,232,0.4)", textTransform: "uppercase", marginTop: 3 }}>
-              גליל מערבי
+            <span style={{ fontSize: "0.65rem", letterSpacing: "4px", color: "rgba(196,184,255,0.5)", textTransform: "uppercase", marginTop: 5 }}>
+              גליל מערבי · לינת יוקרה
             </span>
           </a>
 
           {/* Desktop links */}
           <div className="desktop-nav" style={{ display: "flex", gap: 36, alignItems: "center" }}>
             {navLinks.map((item) => (
-              <a key={item.href} href={item.href} style={{ color: "rgba(247,242,234,0.65)", textDecoration: "none", fontSize: "0.85rem", fontWeight: 400, letterSpacing: "0.3px", transition: "color 0.3s", position: "relative" }}
+              <a key={item.href} href={item.href} style={{ color: "rgba(247,242,234,0.65)", textDecoration: "none", fontSize: "1rem", fontWeight: 400, letterSpacing: "0.3px", transition: "color 0.3s", position: "relative" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#a594f9")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(247,242,234,0.65)")}
               >
@@ -80,7 +90,7 @@ export default function Navbar() {
             >
               <WaIcon />
             </a>
-            <a href="#booking" style={{ background: "linear-gradient(135deg, #7c6fcf, #a594f9)", color: "#08080f", padding: "11px 26px", borderRadius: 50, fontSize: "0.88rem", fontWeight: 700, textDecoration: "none", letterSpacing: "0.3px", transition: "all 0.3s", boxShadow: "0 4px 20px rgba(124,111,207,0.3)" }}
+            <a href="#booking" style={{ background: "linear-gradient(135deg, #7c6fcf, #a594f9)", color: "#08080f", padding: "11px 26px", borderRadius: 50, fontSize: "0.95rem", fontWeight: 700, textDecoration: "none", letterSpacing: "0.3px", transition: "all 0.3s", boxShadow: "0 4px 20px rgba(124,111,207,0.3)" }}
               onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(124,111,207,0.5)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(124,111,207,0.3)"; }}
             >
@@ -125,7 +135,12 @@ export default function Navbar() {
             <div style={{ position: "absolute", top: 0, left: "10%", right: "10%", height: "1px", background: "linear-gradient(90deg, transparent, #a594f9, transparent)" }} />
 
             <div style={{ textAlign: "center", marginBottom: 48 }}>
-              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "2rem", fontWeight: 600, color: "#a594f9" }}>בקתות צוריאל</div>
+              <div style={{
+                fontFamily: "'Cormorant Garamond', serif", fontSize: "2.4rem", fontWeight: 700,
+                background: "linear-gradient(135deg, #c4b8ff, #a594f9, #e0d8ff)",
+                WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent",
+                filter: "drop-shadow(0 0 12px rgba(165,148,249,0.6))",
+              }}>בקתות צוריאל</div>
               <div style={{ fontSize: "0.65rem", letterSpacing: "5px", color: "rgba(247,242,234,0.35)", textTransform: "uppercase", marginTop: 6 }}>גליל מערבי · לינת יוקרה</div>
             </div>
 
