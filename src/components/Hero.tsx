@@ -9,25 +9,35 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
-    <section ref={ref} style={{ minHeight: "100vh", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", background: "#0a0f0a" }}>
+    <section ref={ref} style={{ minHeight: "100vh", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", background: "#08080f" }}>
 
-      {/* Parallax background */}
-      <motion.div style={{ position: "absolute", inset: "-20%", y }}
-        className="hero-bg-anim"
-      >
-        <div style={{
-          position: "absolute", inset: 0,
-          backgroundImage: `url('https://res.cloudinary.com/decirk3zb/image/upload/q_auto,f_auto,w_1800/v1771705562/WhatsApp_Image_2026-02-19_at_22.03.37_7_fwm7yz.jpg')`,
-          backgroundSize: "cover", backgroundPosition: "center",
-        }} />
+      {/* Video background with parallax */}
+      <motion.div style={{ position: "absolute", inset: 0, y }}>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          style={{
+            position: "absolute", inset: 0,
+            width: "100%", height: "100%",
+            objectFit: "cover", objectPosition: "center",
+          }}
+        >
+          <source
+            src="https://res.cloudinary.com/decirk3zb/video/upload/q_auto,vc_auto/v1771798659/%D7%A1%D7%A8%D7%98%D7%95%D7%9F_%D7%94%D7%99%D7%A8%D7%95_vhoarz.mp4"
+            type="video/mp4"
+          />
+        </video>
         {/* Multi-layer gradient overlay */}
         <div style={{
           position: "absolute", inset: 0,
-          background: "linear-gradient(180deg, rgba(10,15,10,0.5) 0%, rgba(10,15,10,0.2) 40%, rgba(10,15,10,0.7) 80%, rgba(10,15,10,0.95) 100%)",
+          background: "linear-gradient(180deg, rgba(8,8,15,0.45) 0%, rgba(8,8,15,0.15) 35%, rgba(8,8,15,0.6) 75%, rgba(8,8,15,0.95) 100%)",
         }} />
         <div style={{
           position: "absolute", inset: 0,
-          background: "radial-gradient(ellipse at 60% 40%, rgba(26,46,26,0.3) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse at 60% 40%, rgba(18,20,58,0.25) 0%, transparent 70%)",
         }} />
       </motion.div>
 
@@ -41,13 +51,13 @@ export default function Hero() {
       <motion.div className="rotate-slow" style={{
         position: "absolute", zIndex: 2, pointerEvents: "none",
         width: 600, height: 600,
-        border: "1px solid rgba(201,162,39,0.06)",
+        border: "1px solid rgba(124,111,207,0.06)",
         borderRadius: "50%",
       }} />
       <motion.div className="rotate-slow" style={{
         position: "absolute", zIndex: 2, pointerEvents: "none",
         width: 800, height: 800,
-        border: "1px solid rgba(201,162,39,0.04)",
+        border: "1px solid rgba(124,111,207,0.04)",
         borderRadius: "50%",
         animationDirection: "reverse",
       }} />
@@ -60,17 +70,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }}
           style={{ display: "inline-flex", alignItems: "center", gap: 16, marginBottom: 40 }}
         >
-          <span style={{ width: 40, height: 1, background: "linear-gradient(90deg, transparent, #c9a227)" }} />
-          <span style={{ fontFamily: "'Heebo'", fontSize: "0.68rem", fontWeight: 600, letterSpacing: "5px", textTransform: "uppercase", color: "#c9a227" }}>
+          <span style={{ width: 40, height: 1, background: "linear-gradient(90deg, transparent, #7c6fcf)" }} />
+          <span style={{ fontFamily: "'Heebo'", fontSize: "0.68rem", fontWeight: 600, letterSpacing: "5px", textTransform: "uppercase", color: "#7c6fcf" }}>
             צוריאל · גליל מערבי
           </span>
-          <span style={{ width: 40, height: 1, background: "linear-gradient(90deg, #c9a227, transparent)" }} />
+          <span style={{ width: 40, height: 1, background: "linear-gradient(90deg, #7c6fcf, transparent)" }} />
         </motion.div>
 
         {/* Main headline */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.8rem, 7vw, 6.5rem)", fontWeight: 300, color: "#f7f2ea", lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: 8 }}
+          style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.8rem, 7vw, 6.5rem)", fontWeight: 300, color: "#f0eeff", lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: 8 }}
         >
           לינת יוקרה
         </motion.h1>
@@ -97,8 +107,8 @@ export default function Hero() {
         >
           <a href="#booking" className="glow-anim"
             style={{
-              background: "linear-gradient(135deg, #c9a227, #e8c547, #f5d76e)",
-              color: "#0a0f0a", padding: "20px 52px", borderRadius: 2,
+              background: "linear-gradient(135deg, #7c6fcf, #a594f9, #c4b8ff)",
+              color: "#08080f", padding: "20px 52px", borderRadius: 2,
               fontWeight: 700, fontSize: "0.9rem", textDecoration: "none",
               letterSpacing: "2px", textTransform: "uppercase",
               transition: "all 0.4s cubic-bezier(0.23, 1, 0.32, 1)",
@@ -110,7 +120,7 @@ export default function Hero() {
           </a>
           <a href="#cabins"
             style={{
-              background: "transparent", color: "#f7f2ea",
+              background: "transparent", color: "#f0eeff",
               border: "1px solid rgba(247,242,234,0.2)",
               padding: "20px 52px", borderRadius: 2,
               fontFamily: "'Cormorant Garamond', serif",
@@ -119,8 +129,8 @@ export default function Hero() {
               transition: "all 0.4s",
               backdropFilter: "blur(8px)",
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(201,162,39,0.5)"; e.currentTarget.style.color = "#e8c547"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(247,242,234,0.2)"; e.currentTarget.style.color = "#f7f2ea"; }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(124,111,207,0.5)"; e.currentTarget.style.color = "#a594f9"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(247,242,234,0.2)"; e.currentTarget.style.color = "#f0eeff"; }}
           >
             הכירו את הבקתות
           </a>
@@ -137,7 +147,7 @@ export default function Hero() {
             { num: "4.9★", label: "דירוג ממוצע" },
           ].map((s) => (
             <div key={s.num} style={{ textAlign: "center" }}>
-              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "2.2rem", fontWeight: 600, color: "#e8c547", lineHeight: 1 }}>{s.num}</div>
+              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "2.2rem", fontWeight: 600, color: "#a594f9", lineHeight: 1 }}>{s.num}</div>
               <div style={{ fontSize: "0.7rem", color: "rgba(247,242,234,0.45)", letterSpacing: "2px", textTransform: "uppercase", marginTop: 6 }}>{s.label}</div>
             </div>
           ))}
@@ -151,7 +161,7 @@ export default function Hero() {
         aria-label="גלול למטה"
       >
         <span style={{ fontSize: "0.6rem", letterSpacing: "3px", color: "rgba(247,242,234,0.3)", textTransform: "uppercase" }}>גלול</span>
-        <div style={{ width: 1, height: 40, background: "linear-gradient(to bottom, rgba(201,162,39,0.6), transparent)" }} />
+        <div style={{ width: 1, height: 40, background: "linear-gradient(to bottom, rgba(124,111,207,0.6), transparent)" }} />
       </button>
     </section>
   );
