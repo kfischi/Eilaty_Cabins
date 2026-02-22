@@ -115,43 +115,43 @@ export default function Chatbot() {
     <>
       {/* Floating Button */}
       <div style={{ position: "fixed", bottom: 32, left: 32, zIndex: 998 }}>
-        {/* Tooltip */}
-        <AnimatePresence>
-          {showTooltip && !isOpen && (
-            <motion.div
-              initial={{ opacity: 0, x: -10, scale: 0.9 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: -10, scale: 0.9 }}
-              style={{
-                position: "absolute",
-                right: 76,
-                top: "50%",
-                background: "#1a2e1a",
-                color: "#f5f0e8",
-                fontSize: "0.8rem",
-                fontWeight: 600,
-                padding: "10px 16px",
-                borderRadius: 50,
-                whiteSpace: "nowrap",
-                boxShadow: "0 4px 20px rgba(26,46,26,0.3)",
-                border: "1px solid rgba(201,162,39,0.3)",
-              }}
-            >
-              שאלו אותי כל דבר! 💬
-              <span style={{
-                position: "absolute",
-                left: -6,
-                top: "50%",
-                transform: "translateY(-50%) rotate(-45deg)",
-                width: 12,
-                height: 12,
-                background: "#1a2e1a",
-                borderRight: "1px solid rgba(201,162,39,0.3)",
-                borderBottom: "1px solid rgba(201,162,39,0.3)",
-              }} />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Permanent label - always visible when closed */}
+        {!isOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: -8 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.5, duration: 0.4 }}
+            style={{
+              position: "absolute",
+              right: 72,
+              top: "50%",
+              transform: "translateY(-50%)",
+              background: "linear-gradient(135deg, #1e3a6e, #2d4a8a)",
+              border: "1px solid rgba(66,153,225,0.35)",
+              color: "#e8f4f8",
+              fontSize: "0.82rem",
+              fontWeight: 600,
+              padding: "10px 18px",
+              borderRadius: 50,
+              whiteSpace: "nowrap",
+              boxShadow: "0 8px 24px rgba(26,54,93,0.5)",
+              pointerEvents: "none",
+            }}
+          >
+            💬 שאלו אותנו כל דבר
+            <span style={{
+              position: "absolute",
+              left: -5,
+              top: "50%",
+              transform: "translateY(-50%) rotate(45deg)",
+              width: 10,
+              height: 10,
+              background: "#2d4a8a",
+              borderRight: "1px solid rgba(66,153,225,0.35)",
+              borderBottom: "1px solid rgba(66,153,225,0.35)",
+            }} />
+          </motion.div>
+        )}
 
         {/* Badge */}
         {hasUnread && !isOpen && (
@@ -164,14 +164,14 @@ export default function Chatbot() {
               right: -4,
               width: 18,
               height: 18,
-              background: "#e8c547",
+              background: "#4299e1",
               borderRadius: "50%",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontSize: "0.65rem",
               fontWeight: 800,
-              color: "#1a2e1a",
+              color: "#1a365d",
               zIndex: 1,
             }}
           >
@@ -187,13 +187,13 @@ export default function Chatbot() {
             width: 60,
             height: 60,
             borderRadius: "50%",
-            background: "linear-gradient(135deg, #1a2e1a, #3d6b3d)",
-            border: "2px solid rgba(201,162,39,0.4)",
+            background: "linear-gradient(135deg, #1a365d, #2d4a8a)",
+            border: "2px solid rgba(45,135,174,0.4)",
             cursor: "pointer",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            boxShadow: "0 8px 32px rgba(26,46,26,0.4)",
+            boxShadow: "0 8px 32px rgba(26,54,93,0.4)",
             fontSize: isOpen ? "1.3rem" : "1.6rem",
           }}
           aria-label="פתח צ'אט"
@@ -219,7 +219,7 @@ export default function Chatbot() {
               maxHeight: "70vh",
               background: "#ffffff",
               borderRadius: 24,
-              boxShadow: "0 24px 80px rgba(26,46,26,0.25), 0 0 0 1px rgba(26,46,26,0.08)",
+              boxShadow: "0 24px 80px rgba(26,54,93,0.25), 0 0 0 1px rgba(26,54,93,0.08)",
               display: "flex",
               flexDirection: "column",
               overflow: "hidden",
@@ -227,7 +227,7 @@ export default function Chatbot() {
           >
             {/* Header */}
             <div style={{
-              background: "linear-gradient(135deg, #1a2e1a, #2d4a2d)",
+              background: "linear-gradient(135deg, #1a365d, #1e3a6e)",
               padding: "18px 20px",
               display: "flex",
               alignItems: "center",
@@ -237,7 +237,7 @@ export default function Chatbot() {
                 width: 44,
                 height: 44,
                 borderRadius: "50%",
-                background: "linear-gradient(135deg, #8B5E3C, #c49a6c)",
+                background: "linear-gradient(135deg, #1a365d, #2d87ae)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -247,7 +247,7 @@ export default function Chatbot() {
                 🏕️
               </div>
               <div style={{ flex: 1 }}>
-                <div style={{ fontWeight: 700, color: "#f5f0e8", fontSize: "0.95rem" }}>
+                <div style={{ fontWeight: 700, color: "#e0f7fa", fontSize: "0.95rem" }}>
                   בקתות צוריאל
                 </div>
                 <div style={{ fontSize: "0.75rem", color: "rgba(245,240,232,0.6)", display: "flex", alignItems: "center", gap: 5 }}>
@@ -303,7 +303,7 @@ export default function Chatbot() {
                       width: 28,
                       height: 28,
                       borderRadius: "50%",
-                      background: "linear-gradient(135deg, #1a2e1a, #3d6b3d)",
+                      background: "linear-gradient(135deg, #1a365d, #2d4a8a)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -315,8 +315,8 @@ export default function Chatbot() {
                   )}
                   <div style={{ maxWidth: "78%" }}>
                     <div style={{
-                      background: msg.role === "user" ? "#1a2e1a" : "#ffffff",
-                      color: msg.role === "user" ? "#f5f0e8" : "#3a3d40",
+                      background: msg.role === "user" ? "#1a365d" : "#ffffff",
+                      color: msg.role === "user" ? "#e0f7fa" : "#2d2d3d",
                       padding: "10px 14px",
                       borderRadius: msg.role === "user"
                         ? "18px 18px 18px 4px"
@@ -350,7 +350,7 @@ export default function Chatbot() {
                 >
                   <div style={{
                     width: 28, height: 28, borderRadius: "50%",
-                    background: "linear-gradient(135deg, #1a2e1a, #3d6b3d)",
+                    background: "linear-gradient(135deg, #1a365d, #2d4a8a)",
                     display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8rem",
                   }}>🌿</div>
                   <div style={{
@@ -366,7 +366,7 @@ export default function Chatbot() {
                         key={i}
                         animate={{ y: [0, -5, 0] }}
                         transition={{ repeat: Infinity, duration: 0.8, delay: i * 0.15 }}
-                        style={{ width: 7, height: 7, borderRadius: "50%", background: "#1a2e1a", opacity: 0.6 }}
+                        style={{ width: 7, height: 7, borderRadius: "50%", background: "#1a365d", opacity: 0.6 }}
                       />
                     ))}
                   </div>
@@ -390,9 +390,9 @@ export default function Chatbot() {
                     key={q}
                     onClick={() => sendMessage(q)}
                     style={{
-                      background: "#f5f0e8",
+                      background: "#e0f7fa",
                       border: "1px solid rgba(139,94,60,0.25)",
-                      color: "#1a2e1a",
+                      color: "#1a365d",
                       padding: "5px 12px",
                       borderRadius: 50,
                       fontSize: "0.75rem",
@@ -402,13 +402,13 @@ export default function Chatbot() {
                       fontFamily: "inherit",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = "#1a2e1a";
-                      e.currentTarget.style.color = "#e8c547";
-                      e.currentTarget.style.borderColor = "#1a2e1a";
+                      e.currentTarget.style.background = "#1a365d";
+                      e.currentTarget.style.color = "#4299e1";
+                      e.currentTarget.style.borderColor = "#1a365d";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = "#f5f0e8";
-                      e.currentTarget.style.color = "#1a2e1a";
+                      e.currentTarget.style.background = "#e0f7fa";
+                      e.currentTarget.style.color = "#1a365d";
                       e.currentTarget.style.borderColor = "rgba(139,94,60,0.25)";
                     }}
                   >
@@ -437,19 +437,19 @@ export default function Chatbot() {
                 disabled={isLoading}
                 style={{
                   flex: 1,
-                  border: "1.5px solid #ede5d4",
+                  border: "1.5px solid #b2f5ea",
                   borderRadius: 50,
                   padding: "10px 16px",
                   fontFamily: "inherit",
                   fontSize: "0.88rem",
-                  color: "#3a3d40",
+                  color: "#2d2d3d",
                   background: "#f8f5f0",
                   outline: "none",
                   transition: "border-color 0.2s",
                   direction: "rtl",
                 }}
-                onFocus={(e) => (e.target.style.borderColor = "#1a2e1a")}
-                onBlur={(e) => (e.target.style.borderColor = "#ede5d4")}
+                onFocus={(e) => (e.target.style.borderColor = "#1a365d")}
+                onBlur={(e) => (e.target.style.borderColor = "#b2f5ea")}
               />
               <motion.button
                 onClick={() => sendMessage(input)}
@@ -461,7 +461,7 @@ export default function Chatbot() {
                   height: 42,
                   borderRadius: "50%",
                   background: input.trim() && !isLoading
-                    ? "linear-gradient(135deg, #1a2e1a, #3d6b3d)"
+                    ? "linear-gradient(135deg, #1a365d, #2d4a8a)"
                     : "#e5e7eb",
                   border: "none",
                   cursor: input.trim() && !isLoading ? "pointer" : "not-allowed",
