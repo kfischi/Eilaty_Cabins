@@ -8,14 +8,14 @@ export const metadata: Metadata = {
 
 export default function AccessibilityPage() {
   return (
-    <div dir="rtl" style={{ background: "#f5f0e8", minHeight: "100vh", paddingTop: 80 }}>
+    <div dir="rtl" style={{ background: "#e0f7fa", minHeight: "100vh", paddingTop: 80 }}>
       {/* Header */}
-      <div style={{ background: "#1a2e1a", padding: "60px 24px", textAlign: "center" }}>
+      <div style={{ background: "#1a365d", padding: "60px 24px", textAlign: "center" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
-          <div style={{ color: "#e8c547", fontSize: "0.75rem", fontWeight: 600, letterSpacing: "3px", textTransform: "uppercase", marginBottom: 16 }}>
+          <div style={{ color: "#4299e1", fontSize: "0.75rem", fontWeight: 600, letterSpacing: "3px", textTransform: "uppercase", marginBottom: 16 }}>
             מסמך נגישות
           </div>
-          <h1 style={{ fontFamily: "'Frank Ruhl Libre', serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 700, color: "#f5f0e8", marginBottom: 12 }}>
+          <h1 style={{ fontFamily: "'Frank Ruhl Libre', serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 700, color: "#e0f7fa", marginBottom: 12 }}>
             הצהרת נגישות
           </h1>
           <p style={{ color: "rgba(245,240,232,0.6)", fontSize: "0.9rem" }}>
@@ -26,7 +26,7 @@ export default function AccessibilityPage() {
 
       {/* Content */}
       <div style={{ maxWidth: 800, margin: "0 auto", padding: "60px 24px" }}>
-        <div style={{ background: "#fff", borderRadius: 20, padding: "48px 40px", boxShadow: "0 4px 30px rgba(26,46,26,0.08)", lineHeight: 1.9, color: "#3a3d40", fontSize: "0.95rem" }}>
+        <div style={{ background: "#fff", borderRadius: 20, padding: "48px 40px", boxShadow: "0 4px 30px rgba(26,54,93,0.08)", lineHeight: 1.9, color: "#2d2d3d", fontSize: "0.95rem" }}>
 
           <Section title="אודות הצהרה זו">
             <p>בקתות צוריאל שואפת להנגיש את אתר האינטרנט שלה לאנשים עם מוגבלות, בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות, תשנ&quot;ח-1998, ותקנותיו.</p>
@@ -66,9 +66,9 @@ export default function AccessibilityPage() {
 
           <Section title="פנייה בנושא נגישות">
             <p>נתקלת בבעיית נגישות? אנו מתחייבים לטפל בפנייתך תוך <strong>7 ימי עסקים</strong>.</p>
-            <div style={{ background: "#f5f0e8", borderRadius: 14, padding: "20px 24px", marginTop: 16 }}>
+            <div style={{ background: "#e0f7fa", borderRadius: 14, padding: "20px 24px", marginTop: 16 }}>
               <p style={{ marginBottom: 8 }}><strong>רכז נגישות:</strong> בקתות צוריאל</p>
-              <p style={{ marginBottom: 8 }}><strong>טלפון:</strong> 050-000-0000</p>
+              <p style={{ marginBottom: 8 }}><strong>טלפון:</strong> 052-398-3394</p>
               <p><strong>WhatsApp:</strong> פנייה ישירה דרך האתר</p>
             </div>
           </Section>
@@ -82,8 +82,8 @@ export default function AccessibilityPage() {
         <div style={{ textAlign: "center", marginTop: 32 }}>
           <Link href="/" style={{
             display: "inline-block",
-            background: "#1a2e1a",
-            color: "#e8c547",
+            background: "#1a365d",
+            color: "#4299e1",
             padding: "14px 32px",
             borderRadius: 50,
             textDecoration: "none",
@@ -101,7 +101,7 @@ export default function AccessibilityPage() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div style={{ marginBottom: 36 }}>
-      <h2 style={{ fontFamily: "'Frank Ruhl Libre', serif", fontSize: "1.2rem", fontWeight: 700, color: "#1a2e1a", marginBottom: 12, paddingBottom: 8, borderBottom: "2px solid #ede5d4" }}>
+      <h2 style={{ fontFamily: "'Frank Ruhl Libre', serif", fontSize: "1.2rem", fontWeight: 700, color: "#1a365d", marginBottom: 12, paddingBottom: 8, borderBottom: "2px solid #b2f5ea" }}>
         {title}
       </h2>
       {children}
