@@ -68,21 +68,19 @@ export default function Chatbot() {
         }),
       });
 
+      if (!res.ok) throw new Error("HTTP " + res.status);
       const data = await res.json();
-      if (data.message) {
-        setMessages((prev) => [
-          ...prev,
-          { role: "assistant", content: data.message, timestamp: new Date() },
-        ]);
-      } else {
-        throw new Error("No message");
-      }
+      const reply = data.message || "שלחו לנו הודעה ב-WhatsApp: 052-398-3394 💬";
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: reply, timestamp: new Date() },
+      ]);
     } catch {
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content: "מצטער, הייתה תקלה זמנית. אנא פנו אלינו ישירות ב-WhatsApp 💬",
+          content: "שלחו לנו הודעה ב-WhatsApp ונשמח לעזור: 052-398-3394 💬",
           timestamp: new Date(),
         },
       ]);
