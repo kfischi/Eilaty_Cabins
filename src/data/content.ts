@@ -5,7 +5,7 @@ export const PHONE = "050-000-0000";
 export const LOCATION = "צוריאל, גליל מערבי";
 
 // All real Cloudinary images
-const IMG = {
+export const IMAGES = {
   // Cabins
   barbur1: "https://res.cloudinary.com/decirk3zb/image/upload/v1771706994/6_lt7xxt.jpg",
   barbur2: "https://res.cloudinary.com/decirk3zb/image/upload/v1771706986/5_ywermp.jpg",
@@ -32,7 +32,7 @@ export const cabins: Cabin[] = [
     name: "ברבור",
     subtitle: "בקתה רומנטית לזוגות",
     badge: "עד 2 אנשים",
-    image: IMG.barbur1,
+    image: IMAGES.barbur1,
     capacity: "2",
     pricePerNight: 950,
     amenities: [
@@ -49,7 +49,7 @@ export const cabins: Cabin[] = [
     name: "פלמינגו",
     subtitle: "בקתת פרמיום לזוגות",
     badge: "⭐ הפופולרית",
-    image: IMG.flamingo1,
+    image: IMAGES.flamingo1,
     capacity: "2",
     pricePerNight: 1150,
     amenities: [
@@ -67,7 +67,7 @@ export const cabins: Cabin[] = [
     name: "חסידה",
     subtitle: "בקתה משפחתית מורחבת",
     badge: "עד 6 אנשים",
-    image: IMG.hasida1,
+    image: IMAGES.hasida1,
     capacity: "6",
     pricePerNight: 1400,
     amenities: [
@@ -82,11 +82,11 @@ export const cabins: Cabin[] = [
 ];
 
 export const galleryImages = [
-  { src: IMG.pool1, label: "בריכה חיצונית" },
-  { src: IMG.jacuzzi, label: "ג'קוזי פרטי" },
-  { src: IMG.view1, label: "נוף הגליל" },
-  { src: IMG.bbq, label: "מטבח BBQ" },
-  { src: IMG.nature1, label: "גליל עליון" },
+  { src: IMAGES.pool1, label: "בריכה חיצונית" },
+  { src: IMAGES.jacuzzi, label: "ג'קוזי פרטי" },
+  { src: IMAGES.view1, label: "נוף הגליל" },
+  { src: IMAGES.bbq, label: "מטבח BBQ" },
+  { src: IMAGES.nature1, label: "גליל עליון" },
 ];
 
 export const audiences: Audience[] = [
@@ -97,7 +97,7 @@ export const audiences: Audience[] = [
     headline: "חופשה רומנטית שתזכרו לנצח",
     description: "כבו את הטלפון, הדליקו את הקמין, ותנו לגליל לעשות את שלו. האינטימיות והפרטיות שיש כאן לא תמצאו במלון.",
     features: ["ג'קוזי פרטי מול נוף הגליל", "קמין עצים לערבים חמימים", "עיצוב רומנטי ואינטימי", "פרטיות מוחלטת"],
-    image: IMG.barbur2,
+    image: IMAGES.barbur2,
     cta: "הזמינו בקתה רומנטית",
   },
   {
@@ -107,7 +107,7 @@ export const audiences: Audience[] = [
     headline: "חופשה שלמה – בטוחה ומהנה לכולם",
     description: "הילדים שמחים בבריכה המגודרת, אתם נרגעים בג'קוזי. מרחב, בטיחות, ואוכל ביחד בחוץ – זה הקסם של צוריאל.",
     features: ["בריכת ילדים מגודרת ובטוחה", "בקתת חסידה עם 2 חדרי שינה", "מטבח מלא + גריל BBQ", "שטח גינה פרטי לילדים"],
-    image: IMG.pool2,
+    image: IMAGES.pool2,
     cta: "הזמינו חופשה משפחתית",
   },
   {
@@ -117,7 +117,7 @@ export const audiences: Audience[] = [
     headline: "אירועים קטנים, רגעים גדולים",
     description: "ימי הולדת, גיבושים, חגיגות משפחתיות – עד 50 איש במרחב פרטי, ירוק ומושקע בגליל.",
     features: ["קיבולת עד 50 אנשים", "מטבח חיצוני גדול + BBQ", "שלוש בקתות ללינה", "ליווי ותיאום מלא"],
-    image: IMG.nature2,
+    image: IMAGES.nature2,
     cta: "שלחו פרטים לאירוע",
   },
 ];
